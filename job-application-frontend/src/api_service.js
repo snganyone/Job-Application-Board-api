@@ -5,13 +5,14 @@ class API{
 
     //Fetch Request to Rails API
 
-    GetJobs = () => fetch(`${this.base_url}`).then(response => response.json());
+    GetJobs = () => fetch(`${this.base_url}`).then(response => response.json()).then(function(json){
+        console.log(json);
+    });
 
     //Render JSON Data in table
 
     JobHTML = (job) => {
         return `
-        <tbody>
         <tr>
             <th scope="row">
                 <td>${job.title}</td>
@@ -21,16 +22,15 @@ class API{
                 <td>${job.release_date}</td>
                 <td>${job.job_type}</td>
             </th>
-        </tr>
-    </tbody>`;
+        </tr>`;
     }
 
     //Parse through JSON Data
-    
+
     RenderJobs = (jobs) => {
         const table = document.getElementById("table-body");
-        table.innerHTML = "";
-        jobs.forEach((element) => table.innerHTML += jobHTML(element));
+        table.innerHTML = this.JobHTML(jobs);
+        //jobs.forEach((element) => (table.innerHTML += JobHTML(element)));
     }
 
 }
