@@ -14,14 +14,12 @@ class API{
     JobHTML = (job) => {
         return `
         <tr>
-            <th scope="row">
-                <td>${job.title}</td>
-                <td>${job.employer}</td>
-                <td>${job.location}</td>
-                <td>${job.description}</td>
-                <td>${job.release_date}</td>
-                <td>${job.job_type}</td>
-            </th>
+            <td>${job.title}</td>
+            <td>${job.employer}</td>
+            <td>${job.location}</td>
+            <td>${job.description}</td>
+            <td>${job.release_date}</td>
+            <td>${job.job_type}</td>
         </tr>`;
     }
 
