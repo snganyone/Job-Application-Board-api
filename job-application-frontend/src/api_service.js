@@ -6,7 +6,7 @@ class API{
     GetJobs = () => fetch(`${this.base_url}`).then(response => response.json());
 
     RenderJobs = (jobs) => {
-        const table = document.getElementById("bootstrap-table");
+        const table = document.getElementById("table-body");
         table.innerHTML = "";
         jobs.forEach((element) => table.innerHTML += jobHTML(element));
     }
