@@ -5,9 +5,7 @@ class API{
 
     //Fetch Request to Rails API
 
-    GetJobs = () => fetch(`${this.base_url}`).then(response => response.json()).then(function(json){
-        console.log(json);
-    });
+    GetJobs = () => fetch(`${this.base_url}`).then(response => response.json()).then((data) => this.RenderJobs(data));
 
     //Render JSON Data in table
 
@@ -27,8 +25,8 @@ class API{
 
     RenderJobs = (jobs) => {
         const table = document.getElementById("table-body");
-        table.innerHTML = this.JobHTML(jobs);
-        //jobs.forEach((element) => (table.innerHTML += JobHTML(element)));
+        table.innerHTML = "";//this.JobHTML(jobs);
+        jobs.forEach((element) => (table.innerHTML += this.JobHTML(element)));
     }
 
 }
