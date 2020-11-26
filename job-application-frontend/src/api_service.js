@@ -29,6 +29,11 @@ class API{
         jobs.forEach((element) => (table.innerHTML += this.JobHTML(element)));
     }
 
+    //Forms
+
+    RenderForm = () => {
+        
+    }
 }
 
 
