@@ -2,7 +2,7 @@
 
 ## Objectives
 
-- Create a single page application that integrates HTML, CSS & Javascript with a backend Ruby on Rails API
+- Create a single page application that integrates HTML, CSS & Javascript with a backend Ruby on Rails API. :smile:
 
 ## Overview
 
