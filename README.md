@@ -11,3 +11,7 @@
 - Users can add a job and delete a job.
 
 - This app is intended to mimick an online job board.
+
+## Contributors Guide
+
+- This project is intended to be a safe and welcoming space for collaboration.
