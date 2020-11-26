@@ -25,7 +25,7 @@ class API{
 
     RenderJobs = (jobs) => {
         const table = document.getElementById("table-body");
-        table.innerHTML = "";//this.JobHTML(jobs);
+        table.innerHTML = "";
         jobs.forEach((element) => (table.innerHTML += this.JobHTML(element)));
     }
 
