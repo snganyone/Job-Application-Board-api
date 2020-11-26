@@ -21,7 +21,7 @@ class API{
         </tr>`;
     }
 
-    //Parse through JSON Data
+    //Parse through JSON Data Object
 
     RenderJobs = (jobs) => {
         const table = document.getElementById("table-body");
