@@ -11,16 +11,17 @@ class API{
         jobs.forEach((element) => table.innerHTML += jobHTML(element));
     }
 
-    JobHTML = (jobs) => {
+    JobHTML = (job) => {
         return `
         <tbody>
         <tr>
             <th scope="row">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>${job.title}</td>
+                <td>${job.employer}</td>
+                <td>${job.location}</td>
+                <td>${job.description}</td>
+                <td>${job.release_date}</td>
+                <td>${job.job_type}</td>
             </th>
         </tr>
     </tbody>`;
