@@ -3,5 +3,28 @@ class API{
         this.base_url = base_url;
     }
 
-    GetJobs = () => fetch(`${this.base_url}`).this(response => response.json);
+    GetJobs = () => fetch(`${this.base_url}`).then(response => response.json());
+
+    RenderJobs = (jobs) => {
+        const table = document.getElementById("bootstrap-table");
+        table.innerHTML = "";
+        jobs.forEach((element) => table.innerHTML += jobHTML(element));
+    }
+
+    JobHTML = (jobs) => {
+        return `
+        <tbody>
+        <tr>
+            <th scope="row">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </th>
+        </tr>
+    </tbody>`;
+    }
 }
+
+
