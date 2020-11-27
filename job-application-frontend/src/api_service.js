@@ -18,7 +18,7 @@ class API{
             <td>${job.description}</td>
             <td>${job.release_date}</td>
             <td>${job.job_type}</td>
-            <td><img src="https://img.icons8.com/android/24/000000/trash.png"/></td>
+            <td></td>
         </tr>`;
     }
 
@@ -35,13 +35,13 @@ class API{
     SearchForm = () => {
         const container = document.getElementById("form-container");
         container.innerHTML = `
-        <form action="" id="search-form" method: "get">
+        <form action="" id="search-form" method="get">
             <div class="form-row"> 
                 <div class="col-auto">
                     <input class="form-control mb-2" type="text" name="title" placeholder="search"></input>
                 </div>
                 <div class="col-auto">
-                    <button class="btn btn-info" type="submit" value="search">Search</button>
+                    <input class="btn btn-info" type="submit" value="search">
                 </div>
             </div>
         </form>
@@ -57,8 +57,7 @@ class API{
 
     SearchJob = (event) => {
         event.preventDefault();
-        const formdata = {
-        };
+        console.log(event);
     }
 }
 
