@@ -37,7 +37,7 @@ class API{
         container.innerHTML = `
         <form action="" id="new-job-form">
         <div class="form-row"> 
-        <div class="col-sm-2 my-1">
+        <div class="col-auto">
             <input class="form-control mb-2" type="text" name="title" placeholder="search"></input>
         </div>
         <div class="col-auto">
