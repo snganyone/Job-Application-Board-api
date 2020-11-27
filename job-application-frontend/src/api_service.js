@@ -48,7 +48,7 @@ class API{
     }
 
     SearchListener = (requesttype) => {
-        
+        const form = document.getElementById("search-form");
     }
 }
 
