@@ -31,7 +31,7 @@ class API{
 
     //Forms
 
-    RenderForm = () => {
+    SearchForm = () => {
         const container = document.getElementById("form-container");
         container.innerHTML = "Hi";
         container.innerHTML = `
