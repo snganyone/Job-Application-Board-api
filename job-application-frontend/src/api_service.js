@@ -36,14 +36,14 @@ class API{
         container.innerHTML = "Hi";
         container.innerHTML = `
         <form action="" id="new-job-form">
-        <div class="form-row"> 
-        <div class="col-auto">
-            <input class="form-control mb-2" type="text" name="title" placeholder="search"></input>
-        </div>
-        <div class="col-auto">
-            <input class="btn btn-primary" type="submit" value="search"></input>
-        </div>
-        </div>
+            <div class="form-row"> 
+                <div class="col-auto">
+                    <input class="form-control mb-2" type="text" name="title" placeholder="search"></input>
+                </div>
+                <div class="col-auto">
+                    <input class="btn btn-primary" type="submit" value="search"></input>
+                </div>
+            </div>
         </form>
         `;
     }
