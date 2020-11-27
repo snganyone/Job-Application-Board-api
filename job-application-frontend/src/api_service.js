@@ -18,6 +18,7 @@ class API{
             <td>${job.description}</td>
             <td>${job.release_date}</td>
             <td>${job.job_type}</td>
+            <td>X</td>
         </tr>`;
     }
 
@@ -56,7 +57,8 @@ class API{
 
     SearchJob = (event) => {
         event.preventDefault();
-        console.log(event);
+        const formdata = {
+        };
     }
 }
 
