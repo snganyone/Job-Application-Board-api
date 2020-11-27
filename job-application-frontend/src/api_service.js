@@ -33,7 +33,6 @@ class API{
 
     SearchForm = () => {
         const container = document.getElementById("form-container");
-        container.innerHTML = "Hi";
         container.innerHTML = `
         <form action="" id="new-job-form">
             <div class="form-row"> 
