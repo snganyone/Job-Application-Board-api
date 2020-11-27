@@ -18,7 +18,7 @@ class API{
             <td>${job.description}</td>
             <td>${job.release_date}</td>
             <td>${job.job_type}</td>
-            <td>X</td>
+            <td><img src="https://img.icons8.com/android/24/000000/trash.png"/></td>
         </tr>`;
     }
 
