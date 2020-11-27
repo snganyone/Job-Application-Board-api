@@ -50,12 +50,12 @@ class API{
     SearchListener = (requesttype) => {
         const form = document.getElementById("search-form");
         if(requesttype === "get"){
-            form.addEventListener("submit", SearchJob());
+            form.addEventListener("submit", (e) => SearchJob(e));
         }
     }
 
-    SearchJob = () => {
-
+    SearchJob = (event) => {
+        event.preventDefault();
     }
 }
 
