@@ -35,10 +35,14 @@ class API{
         const container = document.getElementById("form-container");
         container.innerHTML = "Hi";
         container.innerHTML = `
-        <form action="" id="new-job-form">
+        <form class="form-row" action="" id="new-job-form">
+        <div class="col-sm-3 my-1>
             <label>Title</label>
-            <input type="text" name="title"></input>
-            <input type="submit" value="submit"></input>
+        </div>
+        <div class="col-sm-2 my-1>
+            <input class="form-control" type="text" name="title" placeholder="search"></input>
+        </div>
+            <input class="btn btn-primary" type="submit" value="search"></input>
         </form>
         `;
     }
