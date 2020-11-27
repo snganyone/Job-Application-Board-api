@@ -32,7 +32,15 @@ class API{
     //Forms
 
     RenderForm = () => {
-        
+        const container = document.getElementById("form-container");
+        container.innerHTML = "Hi";
+        container.innerHTML = `
+        <form action="" id="new-job-form">
+            <label>Title</label>
+            <input type="text" name="title"></input>
+            <input type="submit" value="submit"></input>
+        </form>
+        `;
     }
 }
 
