@@ -34,7 +34,7 @@ class API{
     SearchForm = () => {
         const container = document.getElementById("form-container");
         container.innerHTML = `
-        <form action="" id="new-job-form">
+        <form action="" id="search-form">
             <div class="form-row"> 
                 <div class="col-auto">
                     <input class="form-control mb-2" type="text" name="title" placeholder="search"></input>
@@ -45,6 +45,10 @@ class API{
             </div>
         </form>
         `;
+    }
+
+    SearchListener = (requesttype) => {
+        
     }
 }
 
