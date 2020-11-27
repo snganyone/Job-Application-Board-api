@@ -3,4 +3,5 @@ document.addEventListener("DOMContentLoaded", () => {
     api_service.GetJobs(); 
     api_service.SearchForm();
     api_service.SearchListener("get");
+    api_service.JobForm();
 });

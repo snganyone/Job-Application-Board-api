@@ -18,7 +18,7 @@ class API{
             <td>${job.description}</td>
             <td>${job.release_date}</td>
             <td>${job.job_type}</td>
-            <td></td>
+            <td><img src="https://img.icons8.com/android/24/000000/trash.png"/></td>
         </tr>`;
     }
 
@@ -32,8 +32,14 @@ class API{
 
     //Forms
 
+    JobForm = () => {
+        const job_container = document.getElementById("new-job-container");
+        job_container.innerHTML = "New Job!";
+    }
+
+
     SearchForm = () => {
-        const container = document.getElementById("form-container");
+        const container = document.getElementById("search-form-container");
         container.innerHTML = `
         <form action="" id="search-form" method="get">
             <div class="form-row"> 
