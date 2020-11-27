@@ -40,7 +40,7 @@ class API{
                     <input class="form-control mb-2" type="text" name="title" placeholder="search"></input>
                 </div>
                 <div class="col-auto">
-                    <button class="btn btn-primary" type="submit" value="search">Search</button>
+                    <button class="btn btn-info" type="submit" value="search">Search</button>
                 </div>
             </div>
         </form>
