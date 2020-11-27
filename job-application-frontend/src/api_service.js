@@ -34,7 +34,7 @@ class API{
     SearchForm = () => {
         const container = document.getElementById("form-container");
         container.innerHTML = `
-        <form action="" id="search-form">
+        <form action="" id="search-form" method: "get">
             <div class="form-row"> 
                 <div class="col-auto">
                     <input class="form-control mb-2" type="text" name="title" placeholder="search"></input>
@@ -50,12 +50,13 @@ class API{
     SearchListener = (requesttype) => {
         const form = document.getElementById("search-form");
         if(requesttype === "get"){
-            form.addEventListener("submit", (e) => SearchJob(e));
+            form.addEventListener("submit", (e) => this.SearchJob(e));
         }
     }
 
     SearchJob = (event) => {
         event.preventDefault();
+        console.log(event);
     }
 }
 
