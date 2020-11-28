@@ -32,6 +32,8 @@ class API{
 
     //Forms
 
+    //Add New Job
+
     JobForm = () => {
         const job_container = document.getElementById("new-job-container");
         job_container.innerHTML = `
@@ -92,6 +94,8 @@ class API{
         event.preventDefault();
         console.log(event);
     }
+
+    //Search for a Job
 
 
     SearchForm = () => {
