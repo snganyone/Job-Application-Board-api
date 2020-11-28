@@ -92,7 +92,14 @@ class API{
 
     PostJob = (event) => {
         event.preventDefault();
-        console.log(event);
+        const formdata = {
+            title: event.target.title.value,
+            employer: event.target.employer.value,
+            description: event.target.description.value,
+            location: event.target.location.value,
+            release_date: event.target.release_date.value,
+            job_type: event.target.job_type.value,
+        };
     }
 
     //Search for a Job
