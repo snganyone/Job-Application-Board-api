@@ -86,11 +86,11 @@ class API{
     JobListener = (requesttype) => {
         const form = document.getElementById("add-job-form");
         if(requesttype === "post"){
-            form.addEventListener("submit", (e) => this.PostJob(e));
+            form.addEventListener("submit", (e) => this.JobEvent(e));
         }
     }
 
-    PostJob = (event) => {
+    JobEvent = (event) => {
         event.preventDefault();
         const formdata = {
             title: event.target.title.value,
@@ -100,7 +100,10 @@ class API{
             release_date: event.target.release_date.value,
             job_type: event.target.job_type.value,
         };
+        this.PostJob(formdata);
     }
+
+    PostJob = () => {}
 
     //Search for a Job
 
