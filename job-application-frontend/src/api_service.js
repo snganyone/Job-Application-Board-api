@@ -37,7 +37,7 @@ class API{
         job_container.innerHTML = `
         <button class="btn btn-success" type="button" id="new-job">Add Job</button>
         <div id="new-job-form">
-        <form>
+        <form id="add-job-form">
             <div class="form-row">
                 <div class="form-group col-md-6 mb-3">
                     <label>Job Title: </label>
@@ -82,7 +82,7 @@ class API{
     }
 
     JobListener = (requesttype) => {
-        const form = document.getElementById("search-form");
+        const form = document.getElementById("add-job-form");
         if(requesttype === "post"){
             form.addEventListener("submit", (e) => this.PostJob(e));
         }
