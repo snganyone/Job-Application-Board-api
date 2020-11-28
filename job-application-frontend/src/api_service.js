@@ -124,7 +124,7 @@ class API{
         <form action="" id="search-form" method="get">
             <div class="form-row"> 
                 <div class="col-auto">
-                    <input class="form-control mb-2" type="text" name="search" placeholder="search"></input>
+                    <input class="form-control mb-2" type="text" name="query" placeholder="search"></input>
                 </div>
                 <div class="col-auto">
                     <input class="btn btn-info" type="submit" value="search">
@@ -137,21 +137,21 @@ class API{
     SearchListener = (requesttype) => {
         const form = document.getElementById("search-form");
         if(requesttype === "get"){
-            form.addEventListener("submit", (e) => this.SearchJob(e));
+            form.addEventListener("submit", (e) => this.SearchEvent(e));
         }
     }
 
     SearchEvent = (event) => {
         event.preventDefault();
-        formdata = {
-            title: event.target.search.value,
+        const formdata = {
+            title: event.target.query.value,
         };
         this.SearchJob(formdata);
     }
 
-    SearchJob = () => {
+    SearchJob = (data) => {
         const config = {
-            method: "POST",
+            method: "GET",
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
