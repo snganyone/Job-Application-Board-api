@@ -13,6 +13,16 @@ class JobsController < ApplicationController
         render json: @job
     end
 
+    def destroy
+        @job = Job.find(params[:id])
+        if @job
+            @job.destroy
+            render json: {message: "Job Deleted"}, status 200
+        else
+            render json: {error: "Unable to delete Job post"}, status: 400
+        end
+    end
+
     private
 
     def job_params

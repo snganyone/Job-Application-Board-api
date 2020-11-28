@@ -147,6 +147,7 @@ class API{
             title: event.target.query.value,
         };
         this.SearchJob(formdata);
+        console.log(this.SearchJob(formdata));
     }
 
     SearchJob = (data) => {
@@ -156,7 +157,7 @@ class API{
                 "Content-Type": "application/json",
                 "Accept": "application/json",
             },
-            body: JSON.stringify(data),
+            //body: JSON.stringify(data),
         };
         fetch(this.base_url, config);
     }
