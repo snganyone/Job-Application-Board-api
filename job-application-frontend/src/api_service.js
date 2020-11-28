@@ -124,7 +124,7 @@ class API{
         <form action="" id="search-form" method="get">
             <div class="form-row"> 
                 <div class="col-auto">
-                    <input class="form-control mb-2" type="text" name="title" placeholder="search"></input>
+                    <input class="form-control mb-2" type="text" name="search" placeholder="search"></input>
                 </div>
                 <div class="col-auto">
                     <input class="btn btn-info" type="submit" value="search">
@@ -144,13 +144,13 @@ class API{
     SearchEvent = (event) => {
         event.preventDefault();
         formdata = {
-            title: event.target.title.value;
+            title: event.target.search.value,
         };
-        
+        this.SearchJob(formdata);
     }
 
     SearchJob = () => {
-        
+
     }
 
 }
