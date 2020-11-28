@@ -103,7 +103,16 @@ class API{
         this.PostJob(formdata);
     }
 
-    PostJob = () => {}
+    PostJob = (data) => {
+        const config = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+            }
+        };
+        fetch(this.base_url, config);
+    }
 
     //Search for a Job
 
