@@ -39,17 +39,17 @@ class API{
         <div id="new-job-form">
         <form>
             <label>Job Title: </label>
-            <input type = "text">
+            <input type = "text" name="title">
             <label>Employer: </label>
-            <input type = "text">
+            <input type = "text" name="employer">
             <label>Description: </label>
-            <input type = "text">
+            <input type = "text" name="description">
             <label>Location: </label>
-            <input type = "text">
+            <input type = "text" name="location">
             <label>Release Date: </label>
-            <input type = "text">
+            <input type = "text" name="release_date">
             <label>Job Type: </label>
-            <input type = "text">
+            <input type = "text" name="job_type">
         </form>
         </div>`;
     }
