@@ -5,7 +5,8 @@ class JobsController < ApplicationController
     end
 
     def create
-        @job = Job.new()
+        @job = Job.create(job_params)
+        render json: @job
     end
 
     private
