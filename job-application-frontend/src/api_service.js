@@ -143,8 +143,16 @@ class API{
 
     SearchEvent = (event) => {
         event.preventDefault();
-        formdata = {};
+        formdata = {
+            title: event.target.title.value;
+        };
+        
     }
+
+    SearchJob = () => {
+        
+    }
+
 }
 
 
