@@ -81,6 +81,18 @@ class API{
         </div>`;
     }
 
+    JobListener = (requesttype) => {
+        const form = document.getElementById("search-form");
+        if(requesttype === "post"){
+            form.addEventListener("submit", (e) => this.PostJob(e));
+        }
+    }
+
+    PostJob = (event) => {
+        event.preventDefault();
+        console.log(event);
+    }
+
 
     SearchForm = () => {
         const container = document.getElementById("search-form-container");
