@@ -141,9 +141,9 @@ class API{
         }
     }
 
-    SearchJob = (event) => {
+    SearchEvent = (event) => {
         event.preventDefault();
-        console.log(event);
+        formdata = {};
     }
 }
 
