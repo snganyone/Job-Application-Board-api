@@ -38,20 +38,45 @@ class API{
         <button class="btn btn-success" type="button" id="new-job">Add Job</button>
         <div id="new-job-form">
         <form>
-            <label>Job Title: </label>
-            <input type = "text" name="title">
-            <label>Employer: </label>
-            <input type = "text" name="employer">
-            <label>Description: </label>
-            <input type = "text" name="description">
-            <label>Location: </label>
-            <input type = "text" name="location">
-            <label>Release Date: </label>
-            <input type = "text" name="release_date">
-            <label>Job Type: </label>
-            <input type = "text" name="job_type">
+            <div class="form-row">
+                <div class="form-group col-md-6 mb-3">
+                    <label>Job Title: </label>
+                    <input class="form-control" type = "text" name="title">
+                </div>
 
-            <input type="submit" value="submit">
+                <div class="form-group col-md-6">
+                    <label>Employer: </label>
+                    <input class="form-control" type="text" name="employer">
+                </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Description: </label>
+                        <input class="form-control" type="text" name="description">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-md-6">
+                    <label>Location: </label>
+                    <input class="form-control" type="text" name="location">
+                    </div>
+
+                    <div class="col-md-4">
+                    <label>Release Date: </label>
+                    <input class="form-control" type="text" name="release_date">
+                    </div>
+
+                    <div class="col-md-2">
+                    <label>Job Type: </label>
+                    <input class="form-control" type="text" name="job_type">
+                    </div>
+
+                </div>
+
+                <input class="btn btn-success" type="submit" value="submit">
+            </div>
         </form>
         </div>`;
     }
