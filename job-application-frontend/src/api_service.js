@@ -162,6 +162,8 @@ class API{
         fetch(this.base_url, config);
     }
 
+    //Delete a Job
+
 }
 
 
