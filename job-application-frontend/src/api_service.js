@@ -50,6 +50,8 @@ class API{
             <input type = "text" name="release_date">
             <label>Job Type: </label>
             <input type = "text" name="job_type">
+
+            <input type="submit" value="submit">
         </form>
         </div>`;
     }
