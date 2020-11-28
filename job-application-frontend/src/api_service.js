@@ -34,7 +34,24 @@ class API{
 
     JobForm = () => {
         const job_container = document.getElementById("new-job-container");
-        job_container.innerHTML = "New Job!";
+        job_container.innerHTML = `
+        <button class="btn btn-success" type="button" id="new-job">Add Job</button>
+        <div id="new-job-form">
+        <form>
+            <label>Job Title: </label>
+            <input type = "text">
+            <label>Employer: </label>
+            <input type = "text">
+            <label>Description: </label>
+            <input type = "text">
+            <label>Location: </label>
+            <input type = "text">
+            <label>Release Date: </label>
+            <input type = "text">
+            <label>Job Type: </label>
+            <input type = "text">
+        </form>
+        </div>`;
     }
 
 
