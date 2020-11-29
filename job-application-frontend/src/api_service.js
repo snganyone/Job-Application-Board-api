@@ -166,7 +166,8 @@ class API{
 
     DeleteJobListener = () => {
         const td = document.getElementById("trash-job");
-        td.addEventListener("click", this.DeleteEvent);
+        console.log(td);
+        //td.addEventListener("click", this.DeleteEvent);
     }
 
     DeleteEvent = (event) => {
