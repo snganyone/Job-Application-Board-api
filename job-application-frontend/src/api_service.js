@@ -18,7 +18,7 @@ class API{
             <td>${job.description}</td>
             <td>${job.release_date}</td>
             <td>${job.job_type}</td>
-            <td><img src="https://img.icons8.com/android/24/000000/trash.png"/></td>
+            <td id="trash-job" job-id="${job.id}"><img src="https://img.icons8.com/android/24/000000/trash.png"/></td>
         </tr>`;
     }
 
@@ -163,6 +163,29 @@ class API{
     }
 
     //Delete a Job
+
+    // DeleteJobListener = () => {
+    //     const td = document.getElementById("trash-job");
+    //     td.addEventListener("click", this.DeleteEvent);
+    // }
+
+    // DeleteEvent = (event) => {
+    //     if(event.target.className === "delete"){
+    //         const delete_id = event.target.dataset.id;
+    //         this.DeleteJob(delete_id);
+    //     }
+    // }
+
+    // DeleteJob = (id) => {
+    //     fetch(this.base_url + `/${id}`, {method: "delete"})
+    //     .then((res) => res.json())
+    //     .then((data) => Removetd(data.id));
+    // }
+
+    // Removetd = (td) => {
+    //     const td = document.getElementById()
+    // }
+
 
 }
 
