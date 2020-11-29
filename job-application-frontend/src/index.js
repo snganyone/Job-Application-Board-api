@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     api_service.SearchListener("get");
     api_service.JobForm();
     api_service.JobListener("post");
+    api_service.DeleteJobListener();
 
     let button = document.getElementById("new-job");
     let job_form = document.getElementById("new-job-form");
