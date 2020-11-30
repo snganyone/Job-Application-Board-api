@@ -5,31 +5,25 @@ class API{
 
     //Fetch Request to Rails API
 
-    GetJobs = () => fetch(`${this.base_url}`).then(response => response.json()).then((data) => this.RenderJobs(data));
+    GetJobs = () => fetch(`${this.base_url}`).then(response => response.json()).then((data) => Job.RenderJobs(data));
 
-    //Render JSON Data in table
-
-    JobHTML = (job) => {
-        return `
-        <tr>
-            <td>${job.title}</td>
-            <td>${job.employer}</td>
-            <td>${job.location}</td>
-            <td>${job.description}</td>
-            <td>${job.release_date}</td>
-            <td>${job.job_type}</td>
-            <td id="trash-job" data-id="${job.id}"><img class="delete" src="https://img.icons8.com/android/24/000000/trash.png"/></td>
-        </tr>`;
+    PostJob = (data) => {
+        const config = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+            },
+            body: JSON.stringify(data),
+        };
+        fetch(this.base_url, config);
     }
 
-    //Parse through JSON Data Object
-
-    RenderJobs = (jobs) => {
-        const table = document.getElementById("table-body");
-        table.innerHTML = "";
-        jobs.forEach((element) => (table.innerHTML += this.JobHTML(element)));
+    DeleteJob = (id) => {
+        fetch(this.base_url + `/${id}`, {method: "delete"})
+        .then((res) => res.json())
+        .then((data) => Job.Removetd(data.id));
     }
-
 }
 
 

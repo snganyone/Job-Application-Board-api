@@ -1,4 +1,31 @@
 class Job{
+
+    constructor(){
+        this.api = new API("http://localhost:3000/jobs");
+    }
+    //Render JSON Data in table
+
+    static JobHTML = (job) => {
+        return `
+        <tr>
+            <td>${job.title}</td>
+            <td>${job.employer}</td>
+            <td>${job.location}</td>
+            <td>${job.description}</td>
+            <td>${job.release_date}</td>
+            <td>${job.job_type}</td>
+            <td id="trash-job" data-id="${job.id}"><img class="delete" src="https://img.icons8.com/android/24/000000/trash.png"/></td>
+        </tr>`;
+    }
+
+    //Parse through JSON Data Object
+
+    static RenderJobs = (jobs) => {
+        const table = document.getElementById("table-body");
+        table.innerHTML = "";
+        jobs.forEach((element) => (table.innerHTML += this.JobHTML(element)));
+    }
+
     //Forms
 
     //Add New Job
@@ -69,19 +96,7 @@ class Job{
             release_date: event.target.release_date.value,
             job_type: event.target.job_type.value,
         };
-        this.PostJob(formdata);
-    }
-
-    PostJob = (data) => {
-        const config = {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json",
-            },
-            body: JSON.stringify(data),
-        };
-        fetch(this.base_url, config);
+        this.api.PostJob(formdata);
     }
 
     //Search for a Job
@@ -146,18 +161,11 @@ class Job{
         console.log(event.target);
         if(event.target.className === "delete"){
             const delete_id = event.target.parentElement.dataset.id;
-            this.DeleteJob(delete_id);
+            this.api.DeleteJob(delete_id);
         }
     }
 
-    DeleteJob = (id) => {
-        fetch(this.base_url + `/${id}`, {method: "delete"})
-        .then((res) => res.json())
-        .then((data) => this.Removetd(data.id));
-    }
-
-    Removetd = (id) => {
-        
+    static Removetd = (id) => {
         const td = document.querySelector(`[data-id="${id}"]`);
         td.parentElement.remove();
     }
