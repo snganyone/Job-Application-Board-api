@@ -135,7 +135,6 @@ class Job{
             title: event.target.query.value,
         };
         this.SearchJob(formdata);
-        console.log(this.api.SearchJob(formdata));
     }
 
 
@@ -144,10 +143,6 @@ class Job{
     DeleteJobListener = () => {
         const table = document.getElementById("bootstrap-table");
         table.addEventListener("click", (event) => this.DeleteEvent(event));
-
-        const td = document.getElementsByClassName("delete");
-        console.log(td);
-        //td.addEventListener("click", this.DeleteEvent);
     }
 
     DeleteEvent = (event) => {
