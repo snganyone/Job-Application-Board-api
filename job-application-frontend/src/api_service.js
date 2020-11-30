@@ -18,7 +18,7 @@ class API{
             <td>${job.description}</td>
             <td>${job.release_date}</td>
             <td>${job.job_type}</td>
-            <td id="trash-job" class="delete" job-id="${job.id}"><img src="https://img.icons8.com/android/24/000000/trash.png"/></td>
+            <td id="trash-job" data-id="${job.id}"><img class="delete" src="https://img.icons8.com/android/24/000000/trash.png"/></td>
         </tr>`;
     }
 
@@ -165,14 +165,18 @@ class API{
     //Delete a Job
 
     DeleteJobListener = () => {
-        const td = document.getElementById("trash-job");
+        const table = document.getElementById("bootstrap-table");
+        table.addEventListener("click", (event) => this.DeleteEvent(event));
+
+        const td = document.getElementsByClassName("delete");
         console.log(td);
         //td.addEventListener("click", this.DeleteEvent);
     }
 
     DeleteEvent = (event) => {
+        console.log(event.target);
         if(event.target.className === "delete"){
-            const delete_id = event.target.dataset.id;
+            const delete_id = event.target.parentElement.dataset.id;
             this.DeleteJob(delete_id);
         }
     }
@@ -180,11 +184,12 @@ class API{
     DeleteJob = (id) => {
         fetch(this.base_url + `/${id}`, {method: "delete"})
         .then((res) => res.json())
-        .then((data) => Removetd(data.id));
+        .then((data) => this.Removetd(data.id));
     }
 
     Removetd = (id) => {
-        const td = document.querySelector(`[job-id="${job.id}]`);
+        
+        const td = document.querySelector(`[data-id="${id}"]`);
         td.parentElement.remove();
     }
 
