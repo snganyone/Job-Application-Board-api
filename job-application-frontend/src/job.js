@@ -3,6 +3,7 @@ class Job{
     constructor(){
         this.api = new API("http://localhost:3000/jobs");
     }
+
     //Render JSON Data in table
 
     static JobHTML = (job) => {
@@ -99,8 +100,11 @@ class Job{
         this.api.PostJob(formdata);
     }
 
-    //Search for a Job
+    Addtd = (id) => {
+        const tr = ``;
+    }
 
+    //Search for a Job
 
     SearchForm = () => {
         const container = document.getElementById("search-form-container");
@@ -131,20 +135,9 @@ class Job{
             title: event.target.query.value,
         };
         this.SearchJob(formdata);
-        console.log(this.SearchJob(formdata));
+        console.log(this.api.SearchJob(formdata));
     }
 
-    SearchJob = (data) => {
-        const config = {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json",
-            },
-            //body: JSON.stringify(data),
-        };
-        fetch(this.base_url, config);
-    }
 
     //Delete a Job
 

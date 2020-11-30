@@ -24,6 +24,18 @@ class API{
         .then((res) => res.json())
         .then((data) => Job.Removetd(data.id));
     }
+
+    SearchJob = (data) => {
+        const config = {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+            },
+            //body: JSON.stringify(data),
+        };
+        fetch(this.base_url, config);
+    }
 }
 
 
