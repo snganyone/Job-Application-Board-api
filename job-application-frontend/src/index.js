@@ -1,11 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
     const api_service = new API("http://localhost:3000/jobs");
+    const job = new Job();
     api_service.GetJobs(); 
-    api_service.SearchForm();
-    api_service.SearchListener("get");
-    api_service.JobForm();
-    api_service.JobListener("post");
-    api_service.DeleteJobListener();
+    job.SearchForm();
+    job.SearchListener("get");
+    job.JobForm();
+    job.JobListener("post");
+    job.DeleteJobListener();
 
     let button = document.getElementById("new-job");
     let job_form = document.getElementById("new-job-form");
