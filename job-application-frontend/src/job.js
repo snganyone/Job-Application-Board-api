@@ -103,7 +103,7 @@ class Job{
     static Addtr = (job) => {
         const tr = this.JobHTML(job);
         const tbdy = document.getElementById("table-body");
-        tbdy.append(tr);
+        tbdy.innerHTML += tr;
     }
 
     //Search for a Job
