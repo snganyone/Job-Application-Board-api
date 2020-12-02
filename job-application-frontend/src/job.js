@@ -41,10 +41,10 @@ class Job{
 
             <div class="dropdown">
             <button class="btn btn-success">Employment Agency</button>
-                <div class="dropdown-menu">
+                <div class="dropdown-menu" id="dropdown">
                 </div>
             </div>
-            
+
             <br>
             <div class="form-row">
                 <div class="form-group col-md-6 mb-3">
