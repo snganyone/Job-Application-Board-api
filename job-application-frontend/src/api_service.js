@@ -39,7 +39,7 @@ class API{
         fetch(this.base_url, config);
     }
 
-    AgencyForm = (data) => {
+    AgencyDropdownForm = () => {
         fetch(this.base_url)
         .then(response => response.json())
         .then((data) => Agency.RenderDropdown(data));

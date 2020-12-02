@@ -40,7 +40,7 @@ class Job{
         <form id="add-job-form">
 
             <div class="dropdown">
-            <button class="btn btn-success">Employment Agency</button>
+            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Employment Agency</button>
                 <div class="dropdown-menu" id="dropdown">
                 </div>
             </div>

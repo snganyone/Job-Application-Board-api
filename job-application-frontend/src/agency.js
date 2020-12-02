@@ -9,8 +9,10 @@ class Agency{
         `;
     }
 
-    RenderDropdown = () => {
-        const drop = document.getElementById("dropdown");
+    static RenderDropdown = (agencies) => {
+        const drop = document.getElementsByClassName("dropdown-menu");
+        drop.innerHTML = "";
+        agencies.forEach((element) => (drop.innerHTML += this.RenderDropdownHTML(element)));
     }
 
 }
