@@ -35,8 +35,13 @@ class Job{
         const job_container = document.getElementById("new-job-container");
         job_container.innerHTML = `
         <button class="btn btn-success" type="button" id="new-job">Add Job</button>
+        <br>
         <div id="new-job-form">
         <form id="add-job-form">
+            <div class="dropdown">
+            <button>Employment Agency</button>
+            </div>
+            <br>
             <div class="form-row">
                 <div class="form-group col-md-6 mb-3">
                     <label>Job Title: </label>

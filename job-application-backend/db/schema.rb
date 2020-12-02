@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_25_165143) do
+ActiveRecord::Schema.define(version: 2020_12_02_172606) do
+
+  create_table "agencies", force: :cascade do |t|
+    t.string "name"
+    t.string "bio"
+    t.string "agency_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "jobs", force: :cascade do |t|
     t.string "title"
@@ -21,6 +29,7 @@ ActiveRecord::Schema.define(version: 2020_11_25_165143) do
     t.string "job_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "agency_id"
   end
 
 end
