@@ -1,7 +1,8 @@
 class JobsController < ApplicationController
     def index
         if(params[:query])
-            @jobs = Job.search(params[:query])
+            @job = Job.search(params[:query])
+            render json: @job
         else
             @jobs = Job.all
             render json: @jobs, except: [:created_at, :updated_at]

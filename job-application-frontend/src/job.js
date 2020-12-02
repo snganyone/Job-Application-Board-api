@@ -38,9 +38,13 @@ class Job{
         <br>
         <div id="new-job-form">
         <form id="add-job-form">
+
             <div class="dropdown">
-            <button>Employment Agency</button>
+            <button class="btn btn-success">Employment Agency</button>
+                <div class="dropdown-menu">
+                </div>
             </div>
+            
             <br>
             <div class="form-row">
                 <div class="form-group col-md-6 mb-3">
