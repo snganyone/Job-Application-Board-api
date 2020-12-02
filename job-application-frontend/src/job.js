@@ -100,8 +100,10 @@ class Job{
         this.api.PostJob(formdata);
     }
 
-    Addtd = (id) => {
-        const tr = ``;
+    static Addtr = (job) => {
+        const tr = this.JobHTML(job);
+        const tbdy = document.getElementById("table-body");
+        tbdy.append(tr);
     }
 
     //Search for a Job
