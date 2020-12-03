@@ -38,10 +38,8 @@ class Job{
         <br>
         <div id="new-job-form">
         <form id="add-job-form">
-
             <select class="form-control" id="dropdown" name="agency_id">
             </select>
-
             <br>
             <div class="form-row">
                 <div class="form-group col-md-6 mb-3">
