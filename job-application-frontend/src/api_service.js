@@ -28,15 +28,7 @@ class API{
     }
 
     SearchJob = (data) => {
-        const config = {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json",
-            },
-            //body: JSON.stringify(data),
-        };
-        fetch(`${this.base_url}`, config)
+        fetch(`${this.base_url}`, {method: "get"})
         .then((res) => res.json())
         .then((data) => Job.SearchEvent(data));
     }

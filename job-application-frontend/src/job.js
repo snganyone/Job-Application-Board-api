@@ -144,7 +144,6 @@ class Job{
         this.api.SearchJob(formdata);
     }
 
-
     //Delete a Job
 
     DeleteJobListener = () => {

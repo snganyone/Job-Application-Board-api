@@ -13,30 +13,30 @@ document.addEventListener("DOMContentLoaded", () => {
     job.JobListener("post");
     job.DeleteJobListener();
 
-    // const utility = new Utility();
-    // console.log(utility);
-    // utility.DisplayForm();
+    const utility = new Utility();
+    //console.log(utility);
+    utility.DisplayForm();
 
     
-    let button = document.getElementById("new-job");
-    let job_form = document.getElementById("new-job-form"); 
+    // let button = document.getElementById("new-job");
+    // let job_form = document.getElementById("new-job-form"); 
 
-    function show(){
-        job_form.style.visibility = "visible";
-    }
-    function hide(){
-        job_form.style.visibility = "hidden";
-    }
+    // function show(){
+    //     job_form.style.visibility = "visible";
+    // }
+    // function hide(){
+    //     job_form.style.visibility = "hidden";
+    // }
 
-    function toggle(){
-        if(job_form.style.visibility === "hidden"){
-            show();
-        } else{
-            hide();
-        }
-    }
-    hide();
+    // function toggle(){
+    //     if(job_form.style.visibility === "hidden"){
+    //         show();
+    //     } else{
+    //         hide();
+    //     }
+    // }
+    // hide();
 
-    button.addEventListener("click", toggle, false);
+    // button.addEventListener("click", toggle, false);
 });
 
