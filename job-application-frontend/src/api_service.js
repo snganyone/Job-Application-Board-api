@@ -28,9 +28,9 @@ class API{
     }
 
     SearchJob = (data) => {
-        fetch(`${this.base_url}`, {method: "get"})
-        .then((res) => res.json())
-        .then((data) => Job.SearchEvent(data));
+        const url = new URL(`${this.base_url}`);
+        url.search = new URLSearchParams(data);
+        fetch(url).then((res) => res.json()).then((data) => Job.RenderJobs(data));
     }
 
     AgencyDropdownForm = () => {

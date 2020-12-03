@@ -136,10 +136,10 @@ class Job{
         }
     }
 
-    static SearchEvent = (event) => {
+    SearchEvent = (event) => {
         event.preventDefault();
         const formdata = {
-            title: event.target.query.value,
+            query: event.target.query.value,
         };
         this.api.SearchJob(formdata);
     }
