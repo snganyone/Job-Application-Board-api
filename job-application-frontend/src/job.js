@@ -39,7 +39,7 @@ class Job{
         <div id="new-job-form">
         <form id="add-job-form">
 
-            <select id="dropdown" name="agency_id">
+            <select class="form-control" id="dropdown" name="agency_id">
             </select>
 
             <br>
