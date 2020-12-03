@@ -9,13 +9,17 @@ class Utility{
     }
 
     // Show/Hide Form
-    
+
     DisplayForm = () => {
         if(this.job_form.style.visibility === "hidden"){
             this.job_form.style.visibility = "visible";
         } else{
             this.job_form.style.visibility = "hidden";    
         }
+    }
+
+    FormModal = () => {
+        
     }
 
 }
