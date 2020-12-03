@@ -16,7 +16,7 @@ class API{
             },
             body: JSON.stringify(data),
         };
-        fetch(this.base_url, config)
+        fetch(`${this.base_url}`, config)
         .then((res) => res.json())
         .then((data) => Job.Addtr(data));
     }
@@ -36,9 +36,9 @@ class API{
             },
             //body: JSON.stringify(data),
         };
-        // fetch(`${this.base_url}`, config)
-        // .then((res) => res.json())
-        // .then((data) => Job.SearchEvent(data));
+        fetch(`${this.base_url}`, config)
+        .then((res) => res.json())
+        .then((data) => Job.SearchEvent(data));
     }
 
     AgencyDropdownForm = () => {

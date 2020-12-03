@@ -100,6 +100,7 @@ class Job{
             location: event.target.location.value,
             release_date: event.target.release_date.value,
             job_type: event.target.job_type.value,
+            agency_id: event.target.agency_id.value
         };
         this.api.PostJob(formdata);
     }
