@@ -18,8 +18,10 @@ class Utility{
         }
     }
 
-    FormModal = () => {
-        
+    //Popup Form
+    
+    FormPopup = () => {
+
     }
 
 }
