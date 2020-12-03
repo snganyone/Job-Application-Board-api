@@ -4,14 +4,11 @@ class Agency{
     }
 
     static RenderDropdownHTML = (agency) => {
-        return `
-        <a class="dropdown-item" href="#">${agency.name}</a>
-        `;
+        return `<option value="${agency.id}">${agency.name}</option>`;
     }
 
     static RenderDropdown = (agencies) => {
-        const drop = document.getElementsByClassName("dropdown-menu");
-        drop.innerHTML = "";
+        const drop = document.getElementById("dropdown");
         agencies.forEach((element) => (drop.innerHTML += this.RenderDropdownHTML(element)));
     }
 

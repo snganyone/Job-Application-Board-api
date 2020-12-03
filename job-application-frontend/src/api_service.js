@@ -22,7 +22,7 @@ class API{
     }
 
     DeleteJob = (id) => {
-        fetch(this.base_url + `/${id}`, {method: "delete"})
+        fetch(`${this.base_url}` + `/${id}`, {method: "delete"})
         .then((res) => res.json())
         .then((data) => Job.Removetd(data.id));
     }
@@ -36,11 +36,13 @@ class API{
             },
             //body: JSON.stringify(data),
         };
-        fetch(this.base_url, config);
+        // fetch(`${this.base_url}`, config)
+        // .then((res) => res.json())
+        // .then((data) => Job.SearchEvent(data));
     }
 
     AgencyDropdownForm = () => {
-        fetch(this.base_url)
+        fetch(`${this.base_url}`)
         .then(response => response.json())
         .then((data) => Agency.RenderDropdown(data));
     }

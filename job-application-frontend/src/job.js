@@ -39,11 +39,8 @@ class Job{
         <div id="new-job-form">
         <form id="add-job-form">
 
-            <div class="dropdown">
-            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Employment Agency</button>
-                <div class="dropdown-menu" id="dropdown">
-                </div>
-            </div>
+            <select id="dropdown" name="agency_id">
+            </select>
 
             <br>
             <div class="form-row">
@@ -140,12 +137,12 @@ class Job{
         }
     }
 
-    SearchEvent = (event) => {
+    static SearchEvent = (event) => {
         event.preventDefault();
         const formdata = {
             title: event.target.query.value,
         };
-        this.SearchJob(formdata);
+        this.api.SearchJob(formdata);
     }
 
 
