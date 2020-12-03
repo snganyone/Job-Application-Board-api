@@ -15,11 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
     job.JobListener("post");
     job.DeleteJobListener();
 
+    const utility = new Utility();
 
-    //Form
-
+    
     let button = document.getElementById("new-job");
-    let job_form = document.getElementById("new-job-form");
+    let job_form = document.getElementById("new-job-form"); 
 
     function show(){
         job_form.style.visibility = "visible";
@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function hide(){
         job_form.style.visibility = "hidden";
     }
+
     function toggle(){
         if(job_form.style.visibility === "hidden"){
             show();
