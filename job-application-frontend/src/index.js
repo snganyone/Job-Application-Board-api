@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     job.DeleteJobListener();
 
     const utility = new Utility();
-    //console.log(utility);
+    console.log(utility);
     utility.DisplayForm();
 
     

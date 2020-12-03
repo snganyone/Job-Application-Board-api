@@ -9,8 +9,9 @@ class Utility{
         this.button.addEventListener("click", this.DisplayForm);
     }
 
-    static DisplayForm = () => {
+    DisplayForm = () => {
         this.show = !this.show;
+        this.job_form.style.visibility = "hidden";    
         if(this.show){
             this.job_form.style.visibility = "visible";
         } else{
