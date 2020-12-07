@@ -7,6 +7,7 @@ class Utility{
         this.job_form.style.visibility = "hidden";
 
         this.button.addEventListener("click", this.DisplayForm);
+        this.PageLoad();
     }
 
     // Show/Hide Form
@@ -27,6 +28,12 @@ class Utility{
         // })
 
         //$('#myformbutton').modal('hide');
+    }
+
+    PageLoad = () => {
+        window.addEventListener('load', (event) => {
+            console.log("Page Loaded");
+        })
     }
 
 }
