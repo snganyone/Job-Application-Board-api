@@ -1,3 +1,10 @@
 body{
     background-color: lightyellow;
 }
+
+#new-job-form{
+    width: 50vw;
+    background: white;
+    padding: 20px;
+    margin: 50px auto;
+}

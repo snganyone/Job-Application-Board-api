@@ -4,9 +4,9 @@ class Utility{
     constructor(){
         this.button = document.getElementById("new-job");
         this.job_form = document.getElementById("new-job-form"); 
-        this.job_form.style.visibility = "hidden";
+        //this.job_form.style.visibility = "hidden";
 
-        this.button.addEventListener("click", this.DisplayForm);
+        this.button.addEventListener("click", this.FormPopup);
         this.PageLoad();
     }
 
@@ -23,11 +23,7 @@ class Utility{
     //Popup Form
     
     FormPopup = () => {
-        // $(".add-job-form").on('shown.bs.modal', function() {
-        //     $("#new-job").trigger('focus');
-        // })
-
-        //$('#myformbutton').modal('hide');
+        modal.toggle();
     }
 
     PageLoad = () => {
