@@ -12,4 +12,8 @@ class Agency{
         agencies.forEach((element) => (drop.innerHTML += this.RenderDropdownHTML(element)));
     }
 
+    RenderAgencyJobs = () => {
+        
+    }
+
 }
