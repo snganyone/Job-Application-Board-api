@@ -16,7 +16,7 @@ class JobsController < ApplicationController
 
     def create
         @job = Job.create(job_params)
-        render json: @job
+        render json: @job, except: [:created_at, :updated_at], include: :agency
     end
 
     def show
