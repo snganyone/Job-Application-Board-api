@@ -138,6 +138,7 @@ class Job{
     }
 
     SearchEvent = (event) => {
+        console.log(event.target);
         event.preventDefault();
         const formdata = {
             query: event.target.query.value,
