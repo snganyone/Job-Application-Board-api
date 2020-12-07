@@ -7,7 +7,6 @@ class Job{
     //Render JSON Data in table
 
     static JobHTML = (job) => {
-        console.log(job)
         return `
         <tr>
             <td>${job.agency.name}</td>
@@ -154,7 +153,6 @@ class Job{
     }
 
     DeleteEvent = (event) => {
-        console.log(event.target);
         if(event.target.className === "delete"){
             const delete_id = event.target.parentElement.dataset.id;
             this.api.DeleteJob(delete_id);
