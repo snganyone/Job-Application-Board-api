@@ -7,9 +7,10 @@ class Job{
     //Render JSON Data in table
 
     static JobHTML = (job) => {
+        console.log(job)
         return `
         <tr>
-            <td>${job.agency}</td>
+            <td>${job.agency.name}</td>
             <td>${job.title}</td>
             <td>${job.employer}</td>
             <td>${job.location}</td>
