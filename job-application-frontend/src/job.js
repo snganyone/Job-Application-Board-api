@@ -36,7 +36,7 @@ class Job{
     JobForm = () => {
         const job_container = document.getElementById("new-job-container");
         job_container.innerHTML = `
-        <button class="btn btn-success" type="button" id="new-job">Add Job</button>
+        <button class="btn btn-success" type="button" id="new-job" data-toggle="modal" data-target="#myformbutton">Add Job</button>
         <br>
         <div id="new-job-form">
         <form id="add-job-form">

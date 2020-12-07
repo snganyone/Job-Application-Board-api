@@ -14,9 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     job.DeleteJobListener();
 
     //Utility Class
-    const utility = new Utility();
-    //Display Form on Button Click
-    utility.DisplayForm();
+    new Utility();
 
 });
 
