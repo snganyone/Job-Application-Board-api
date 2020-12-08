@@ -68,7 +68,7 @@ class Job{
 
                     <div class="col-md-4">
                     <label>Release Date: </label>
-                    <input class="form-control" type="text" name="release_date">
+                    <input class="form-control" type="date" name="release_date">
                     </div>
 
                     <div class="col-md-2">
