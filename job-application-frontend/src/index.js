@@ -1,20 +1,8 @@
 const modal = new bootstrap.Modal(document.querySelector('.modal'));
-document.addEventListener("DOMContentLoaded", () => {    
 
-    const api_service = new API("http://localhost:3000/jobs");
-    api_service.GetJobs(); 
-
-    const agency_api_service = new API("http://localhost:3000/agencies");
-    agency_api_service.AgencyDropdownForm();
-
-    const job = new Job();
-
-    job.SearchForm();
-    job.SearchListener("get");
-    job.JobForm();
-    job.JobListener("post");
-    job.DeleteJobListener();
-
+document.addEventListener("DOMContentLoaded", () => {
+   Job.GetAll();
+   Agency.GetAllAgencies();
     //Utility Class
     new Utility();
 });

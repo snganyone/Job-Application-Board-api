@@ -1,31 +1,55 @@
 class Job{
+    static table = document.getElementById("table-body");
+    static api = new API("http://localhost:3000/jobs");
 
-    constructor(){
-        this.api = new API("http://localhost:3000/jobs");
+    constructor(job){
+        this.job = job;
+        this.RenderJobs();
+        
+        this.SearchForm();
+        this.JobForm();
+        this.JobListener("post");
+        // this.SearchListener("get");
+        // this.JobListener("post");
+        // this.DeleteJobListener();
     }
 
     //Render JSON Data in table
 
-    static JobHTML = (job) => {
-        return `
-        <tr>
-            <td>${job.agency.name}</td>
-            <td>${job.title}</td>
-            <td>${job.employer}</td>
-            <td>${job.location}</td>
-            <td>${job.description}</td>
-            <td>${job.release_date}</td>
-            <td>${job.job_type}</td>
-            <td id="trash-job" data-id="${job.id}"><img class="delete" src="https://img.icons8.com/android/24/000000/trash.png"/></td>
-        </tr>`;
+    JobHTML = () => {
+        return `      
+            <td>${this.job.agency.name}</td>
+            <td>${this.job.title}</td>
+            <td>${this.job.employer}</td>
+            <td>${this.job.location}</td>
+            <td>${this.job.description}</td>
+            <td>${this.job.release_date}</td>
+            <td>${this.job.job_type}</td>
+            <td id="trash-job" data-id="${this.job.id}"><img class="delete" src="https://img.icons8.com/android/24/000000/trash.png"/></td>
+    `;
     }
 
     //Parse through JSON Data Object
 
-    static RenderJobs = (jobs) => {
-        const table = document.getElementById("table-body");
-        table.innerHTML = "";
-        jobs.forEach((element) => (table.innerHTML += this.JobHTML(element)));
+    //For every job there needs to be a javascript object
+    //Needs an array of jobs
+    //Change constructor to include job fields
+    //Create individual object for each job
+    //Construct a job object from backend into a javascript object
+
+    //Parse and Render Job Object
+    RenderJobs = () => {
+        const table = this.constructor.table;
+        const row = document.createElement("tr");
+        this.row = row;
+        row.innerHTML += this.JobHTML();
+        row.addEventListener("click", this.deleteEvent)
+        table.append(row);
+    }
+
+    //Instantantiate a new Job Object
+    static GetAll = () => {
+        this.api.GetJobs().then((data) => data.forEach((job) => new Job(job)));
     }
 
     //Forms
@@ -102,12 +126,13 @@ class Job{
             job_type: event.target.job_type.value,
             agency_id: event.target.agency_id.value
         };
-        this.api.PostJob(formdata);
+        this.constructor.api.PostJob(formdata).then((data) => new Job(job));
+        //debugger;
         modal.toggle();
     }
 
     static Addtr = (job) => {
-        const tr = this.JobHTML(job);
+        const tr = this.JobHTML();
         const tbdy = document.getElementById("table-body");
         tbdy.innerHTML += tr;
     }
@@ -145,22 +170,18 @@ class Job{
         this.api.SearchJob(formdata);
     }
 
-    //Delete a Job
+    // static SearchforJob = () => {
+    //     this.api.SearchJob().then((data) => data.forEach((job) => new Job(job)));
+    // }
 
-    DeleteJobListener = () => {
-        const table = document.getElementById("bootstrap-table");
-        table.addEventListener("click", (event) => this.DeleteEvent(event));
-    }
-
-    DeleteEvent = (event) => {
+    deleteEvent = (event) => {
         if(event.target.className === "delete"){
-            const delete_id = event.target.parentElement.dataset.id;
-            this.api.DeleteJob(delete_id);
+            this.constructor.api.DeleteJob(this.job.id)
+            .then((data) => this.removeTd());
         }
     }
 
-    static Removetd = (id) => {
-        const td = document.querySelector(`[data-id="${id}"]`);
-        td.parentElement.remove();
+    removeTd = () => {
+        this.row.remove();
     }
 }

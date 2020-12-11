@@ -1,15 +1,22 @@
 class Agency{
-    constructor(){
-        this.api = new API("http://localhost:3000/agencies");
+    static api = new API("http://localhost:3000/agencies");
+
+    constructor(agency){
+        this.agency = agency;
+        this.RenderDropdown();
     }
 
-    static RenderDropdownHTML = (agency) => {
-        return `<option value="${agency.id}">${agency.name}</option>`;
+    static GetAllAgencies = () => {
+        this.api.GetAgencies().then((data) => data.forEach((agency) => new Agency(agency)));
     }
 
-    static RenderDropdown = (agencies) => {
-        const drop = document.getElementById("dropdown");
-        agencies.forEach((element) => (drop.innerHTML += this.RenderDropdownHTML(element)));
+    RenderDropdownHTML = () => {
+        return `<option value="${this.agency.id}">${this.agency.name}</option>`;
+    }
+
+    RenderDropdown = () => {
+        const select = document.getElementById("dropdown");
+        const option = this.RenderDropdownHTML();
     }
 
 }
