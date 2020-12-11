@@ -9,7 +9,7 @@ class Job{
         this.SearchForm();
         this.JobForm();
         this.JobListener("post");
-        // this.SearchListener("get");
+        this.SearchListener("get");
         // this.JobListener("post");
         // this.DeleteJobListener();
     }
@@ -168,10 +168,6 @@ class Job{
         };
         this.api.SearchJob(formdata).then((job) => new Job(job));
     }
-
-    // static SearchforJob = () => {
-    //     this.api.SearchJob().then((data) => data.forEach((job) => new Job(job)));
-    // }
 
     deleteEvent = (event) => {
         if(event.target.className === "delete"){
