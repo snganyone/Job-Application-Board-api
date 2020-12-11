@@ -18,7 +18,6 @@ class API{
             body: JSON.stringify(data),
         };
         return fetch(`${this.base_url}`, config).then((res) => res.json())
-        //.then((data) => Job.Addtr(data));
     }
 
     DeleteJob = (id) => {

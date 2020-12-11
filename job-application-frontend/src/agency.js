@@ -4,14 +4,14 @@ class Agency{
     constructor(agency){
         this.agency = agency;
         this.RenderDropdown();
-        this.RenderDropdownHTML();
+        this.RenderOptions();
     }
 
     static GetAllAgencies = () => {
         this.api.GetAgencies().then((data) => data.forEach((agency) => new Agency(agency)));
     }
 
-    RenderDropdownHTML = () => {
+    RenderOptions = () => {
         const options = document.createElement("option");
         options.value = `${this.agency.id}`;
         options.text = `${this.agency.name}`;
@@ -22,7 +22,7 @@ class Agency{
     RenderDropdown = () => {
         const select = document.querySelector("select");
         console.log(select);
-        const options = this.RenderDropdownHTML();
+        const options = this.RenderOptions();
         select.add(options);
     }
 

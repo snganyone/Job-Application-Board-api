@@ -166,7 +166,7 @@ class Job{
         const formdata = {
             query: event.target.query.value,
         };
-        this.api.SearchJob(formdata);
+        this.api.SearchJob(formdata).then((job) => new Job(job));
     }
 
     // static SearchforJob = () => {
