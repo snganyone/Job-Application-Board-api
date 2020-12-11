@@ -4,6 +4,7 @@ class Agency{
     constructor(agency){
         this.agency = agency;
         this.RenderDropdown();
+        this.RenderDropdownHTML();
     }
 
     static GetAllAgencies = () => {
@@ -11,12 +12,18 @@ class Agency{
     }
 
     RenderDropdownHTML = () => {
-        return `<option value="${this.agency.id}">${this.agency.name}</option>`;
+        const options = document.createElement("option");
+        options.value = `${this.agency.id}`;
+        options.text = `${this.agency.name}`;
+        return options;
+        //return `<option value="${this.agency.id}">${this.agency.name}</option>`;
     }
 
     RenderDropdown = () => {
-        const select = document.getElementById("dropdown");
-        const option = this.RenderDropdownHTML();
+        const select = document.querySelector("select");
+        console.log(select);
+        const options = this.RenderDropdownHTML();
+        select.add(options);
     }
 
 }

@@ -126,8 +126,7 @@ class Job{
             job_type: event.target.job_type.value,
             agency_id: event.target.agency_id.value
         };
-        this.constructor.api.PostJob(formdata).then((data) => new Job(job));
-        //debugger;
+        this.constructor.api.PostJob(formdata).then((job) => new Job(job));
         modal.toggle();
     }
 
