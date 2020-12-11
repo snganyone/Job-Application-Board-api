@@ -167,6 +167,9 @@ class Job{
         this.api.SearchJob(formdata).then((job) => new Job(job));
     }
 
+
+    //Delete Job
+    
     deleteEvent = (event) => {
         if(event.target.className === "delete"){
             this.constructor.api.DeleteJob(this.job.id)
