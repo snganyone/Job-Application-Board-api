@@ -10,8 +10,6 @@ class Job{
         this.JobForm();
         this.JobListener("post");
         this.SearchListener("get");
-        // this.JobListener("post");
-        // this.DeleteJobListener();
     }
 
     //Render JSON Data in table
