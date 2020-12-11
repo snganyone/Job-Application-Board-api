@@ -27,14 +27,6 @@ class Job{
     `;
     }
 
-    //Parse through JSON Data Object
-
-    //For every job there needs to be a javascript object
-    //Needs an array of jobs
-    //Change constructor to include job fields
-    //Create individual object for each job
-    //Construct a job object from backend into a javascript object
-
     //Parse and Render Job Object
     RenderJobs = () => {
         const table = this.constructor.table;
@@ -164,12 +156,12 @@ class Job{
         const formdata = {
             query: event.target.query.value,
         };
-        this.api.SearchJob(formdata).then((job) => new Job(job));
+        this.api.SearchJob(formdata);
     }
 
 
     //Delete Job
-    
+
     deleteEvent = (event) => {
         if(event.target.className === "delete"){
             this.constructor.api.DeleteJob(this.job.id)
