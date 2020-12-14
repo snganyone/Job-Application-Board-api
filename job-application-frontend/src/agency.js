@@ -4,8 +4,10 @@ class Agency{
     constructor(agency){
         this.agency = agency;
         this.RenderDropdown();
-        this.RenderOptions();
+        this.constructor.all.push(this);
     }
+
+    static all = [];
 
     static GetAllAgencies = () => {
         this.api.GetAgencies().then((data) => data.forEach((agency) => new Agency(agency)));
@@ -20,10 +22,12 @@ class Agency{
     }
 
     RenderDropdown = () => {
-        const select = document.querySelector("select");
+        const select = document.getElementById("dropdown");
         console.log(select);
         const options = this.RenderOptions();
+        console.log(options);
         select.add(options);
+        // select.add(options);
     }
 
 }

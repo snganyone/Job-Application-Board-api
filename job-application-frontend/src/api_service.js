@@ -6,7 +6,29 @@ class API{
     //Fetch Request to Rails API
 
     GetJobs = () => fetch(`${this.base_url}`).then(response => response.json())
-    GetAgencies = () => fetch(`${this.base_url}`).then((response) => response.json())
+
+    //Utilities
+    async HandleFetch(){
+        const f = await (fetch("http://localhost:3000/agencies"));
+        const response = await f.json();
+        return response;
+    }
+
+    CheckError = (response) => {
+        if(response.status >= 200 && response.status <= 299){
+            return response.json();
+        } else {
+            return Promise.reject({statusText: response.statusText});
+        }
+    }
+
+    AwaitFetch = () => {
+        return fetch(`${this.base_url}`).then(res => new Promise(resolve => {setTimeout(() => resolve(res))}, 2000))
+    }
+
+     //GetAgencies = () => fetch(`${this.base_url}`).then(this.CheckError)
+    GetAgencies = () => this.HandleFetch()
+    //GetAgencies = () => this.AwaitFetch();
 
     PostJob = (data) => {
         const config = {
