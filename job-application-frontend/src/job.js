@@ -7,8 +7,6 @@ class Job{
         this.RenderJobs();
         
         this.SearchForm();
-        // this.JobForm();
-        // this.JobListener("post");
         this.SearchListener("get");
     }
 
