@@ -1,4 +1,5 @@
 class JobForm{
+    static api = new API("http://localhost:3000/jobs");
     //Forms
 
     constructor(){
