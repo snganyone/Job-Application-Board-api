@@ -23,11 +23,8 @@ class Agency{
 
     RenderDropdown = () => {
         const select = document.getElementById("dropdown");
-        console.log(select);
         const options = this.RenderOptions();
-        console.log(options);
         select.add(options);
-        // select.add(options);
     }
 
 }
