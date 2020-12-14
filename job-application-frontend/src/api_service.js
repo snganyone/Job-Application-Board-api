@@ -22,10 +22,6 @@ class API{
         }
     }
 
-    AwaitFetch = () => {
-        return fetch(`${this.base_url}`).then(res => new Promise(resolve => {setTimeout(() => resolve(res))}, 2000))
-    }
-
      //GetAgencies = () => fetch(`${this.base_url}`).then(this.CheckError)
     GetAgencies = () => this.HandleFetch()
     //GetAgencies = () => this.AwaitFetch();

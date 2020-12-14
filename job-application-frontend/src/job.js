@@ -5,6 +5,8 @@ class Job{
     constructor(job){
         this.job = job;
         this.RenderJobs();
+        this.SearchForm();
+        this.SearchListener("get")
     }
 
     //Render JSON Data in table
@@ -30,12 +32,47 @@ class Job{
         row.innerHTML += this.JobHTML();
         //Delete Job
         row.addEventListener("click", this.deleteEvent);
+        
         table.append(row);
     }
 
     //Instantantiate a new Job Object
     static GetAll = () => {
         this.api.GetJobs().then((data) => data.forEach((job) => new Job(job)));
+    }
+    
+    //Search for a Job
+
+    SearchForm = () => {
+        const container = document.getElementById("search-form-container");
+        container.innerHTML = `
+        <form action="" id="search-form" method="get">
+            <div class="form-row"> 
+                <div class="col-auto">
+                    <input class="form-control mb-2" type="text" name="query" placeholder="search"></input>
+                </div>
+                <div class="col-auto">
+                    <input class="btn btn-info" type="submit" value="search">
+                </div>
+            </div>
+        </form>
+        `;
+    }
+
+    SearchListener = (requesttype) => {
+        const form = document.getElementById("search-form");
+        if(requesttype === "get"){
+            form.addEventListener("submit", (e) => this.SearchEvent(e));
+        }
+    }
+
+    SearchEvent = (event) => {
+        event.preventDefault();
+        const formdata = {
+            query: event.target.query.value,
+        };
+        this.constructor.api.SearchJob(formdata);
+        this.RenderJobs();
     }
     
     //Delete Job

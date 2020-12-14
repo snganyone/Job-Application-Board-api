@@ -1,5 +1,6 @@
 class SearchForm{
     static api = new API("http://localhost:3000/jobs");
+    
     constructor(){        
         this.SearchForm();
         this.SearchListener("get");
