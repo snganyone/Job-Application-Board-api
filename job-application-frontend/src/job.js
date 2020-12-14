@@ -72,7 +72,7 @@ class Job{
         const formdata = {
             query: event.target.query.value,
         };
-        this.api.SearchJob(formdata);
+        this.constructor.api.SearchJob(formdata);
     }
 
 
