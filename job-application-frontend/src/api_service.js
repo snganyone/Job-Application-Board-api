@@ -46,7 +46,7 @@ class API{
     SearchJob = (data) => {
         const url = new URL(`${this.base_url}`);
         url.search = new URLSearchParams(data);
-        fetch(url).then((res) => res.json()).then((job) => console.log(job))
+        fetch(url).then((res) => res.json()).then((data) => Job.SearchResults(data));
     }
 }
 
